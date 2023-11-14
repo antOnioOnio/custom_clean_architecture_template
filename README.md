@@ -17,42 +17,114 @@ This project follows a clean architecture pattern, aiming for modularity, mainta
 
 ```plaintext
 flutter-clean-architecture
-├── lib
-│   ├── bloc
-│   │   ├── authentication_bloc.dart
-│   │   └── ... (other bloc files)
-│   ├── data
-│   │   ├── models
-│   │   │   └── ... (freezed models)
-│   │   ├── repositories
-│   │   │   └── ... (data repositories)
-│   │   └── services
-│   │       └── ... (connection services using Dio + Retrofit)
-│   ├── presentation
-│   │   ├── screens
-│   │   │   ├── home_screen.dart
-│   │   │   ├── login_screen.dart
-│   │   │   ├── splash_screen.dart
-│   │   │   └── ... (other screens)
-│   │   ├── widgets
-│   │   │   └── ... (custom widgets)
-│   │   └── ...
-│   ├── utils
-│   │   └── ... (utility/helper functions)
-│   ├── app.dart
-│   ├── main.dart
-│   └── ...
-├── test
-│   ├── bloc
-│   │   └── ... (bloc tests)
-│   ├── data
-│   │   └── ... (data layer tests)
-│   └── ...
-├── assets
-│   └── ... (asset files such as images, fonts, etc.)
-├── lib_injections.dart
-├── README.md
-└── ... 
+├── app
+│   ├── config
+│   │   ├── app_fonts.dart
+│   │   ├── app_theme.dart
+│   │   └── environment_config.dart
+│   ├── constants
+│   │   ├── app_assets.dart
+│   │   ├── app_colors.dart
+│   │   ├── app_constants.dart
+│   │   ├── app_urls.dart
+│   │   └── mock_paths.dart
+│   ├── di
+│   │   ├── di.dart
+│   │   ├── modules
+│   │   │   ├── api_modules.dart
+│   │   │   ├── local_modules.dart
+│   │   │   ├── remote_modules.dart
+│   │   │   ├── repository_modules.dart
+│   │   │   └── ui_modules.dart
+│   │   └── top_bloc_provider.dart
+│   ├── extensions
+│   │   └── context_extensions.dart
+│   ├── l10n
+│   │   ├── app_en.arb
+│   │   └── app_es.arb
+│   ├── routes
+│   │   ├── app_paths.dart
+│   │   └── app_routes.dart
+│   ├── types
+│   │   ├── auth_status.dart
+│   │   ├── auth_status.freezed.dart
+│   │   ├── errors
+│   │   │   ├── network_error.dart
+│   │   │   ├── network_error.freezed.dart
+│   │   │   └── network_error_utils.dart
+│   │   ├── repository_error.dart
+│   │   ├── repository_error.freezed.dart
+│   │   ├── result.dart
+│   │   ├── result.freezed.dart
+│   │   ├── screen_status.dart
+│   │   └── screen_status.freezed.dart
+│   └── utils
+│       └── string_validators.dart
+├── data
+│   ├── datasources
+│   │   ├── local_data_source
+│   │   │   └── app_local_datasource.dart
+│   │   └── remote_data_source
+│   │       ├── api
+│   │       │   ├── app_api.dart
+│   │       │   ├── app_api.g.dart
+│   │       │   └── network
+│   │       │       ├── dio_http_client.dart
+│   │       │       └── interceptors
+│   │       │           ├── curl_dio_interceptor.dart
+│   │       │           └── mock_interceptor.dart
+│   │       └── app_remote_data_source.dart
+│   ├── models
+│   │   ├── example_remote_entity.dart
+│   │   ├── example_remote_entity.freezed.dart
+│   │   └── example_remote_entity.g.dart
+│   └── repositories
+│       ├── app_repository.dart
+│       └── data_source_contracts
+│           ├── local
+│           │   └── app_local_datasource_contract.dart
+│           └── remote
+│               └── app_remote_data_source_contract.dart
+├── domain
+│   ├── models
+│   │   ├── example_entity.dart
+│   │   ├── example_entity.freezed.dart
+│   │   └── example_entity.g.dart
+│   └── repository_contracts
+│       └── app_repository_contract.dart
+├── main.dart
+└── presentation
+    ├── features
+    │   ├── authentication
+    │   │   ├── auth_bloc
+    │   │   │   ├── auth_bloc.dart
+    │   │   │   ├── auth_event.dart
+    │   │   │   ├── auth_event.freezed.dart
+    │   │   │   ├── auth_state.dart
+    │   │   │   └── auth_state.freezed.dart
+    │   │   ├── auth_controller.dart
+    │   │   └── authentication_screen.dart
+    │   ├── home
+    │   │   └── home_screen.dart
+    │   └── splash
+    │       ├── splash_bloc
+    │       │   ├── splash_bloc.dart
+    │       │   ├── splash_event.dart
+    │       │   ├── splash_event.freezed.dart
+    │       │   ├── splash_state.dart
+    │       │   └── splash_state.freezed.dart
+    │       ├── splash_controller.dart
+    │       └── splash_screen.dart
+    ├── top_blocs
+    │   └── language_bloc
+    │       ├── language_bloc.dart
+    │       ├── language_bloc_event.dart
+    │       ├── language_bloc_event.freezed.dart
+    │       ├── language_bloc_state.dart
+    │       └── language_bloc_state.freezed.dart
+    └── widgets
+        └── custom_circular_loader.dart
+
 ```
 
 ## Features Implemented
