@@ -1,0 +1,156 @@
+name: clean_architecture_template
+description: A new Flutter project.
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# In Windows, build-name is used as the major, minor, and patch parts
+# of the product and file versions while build-number is used as the build suffix.
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.5 <3.0.0'
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_localizations:
+    sdk: flutter
+
+  go_router: ^6.0.1
+  # Code generation
+  #
+  # Code-generators available to help you deal with immutable objects
+  # https://pub.dev/packages/freezed
+  freezed: ^2.1.1
+  freezed_annotation: ^2.1.0
+
+  #
+  # To generate to/from JSON code for a class
+  # https://pub.dev/packages/json_serializable
+  json_serializable: ^6.5.4
+  json_annotation: ^4.7.0
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.2
+
+
+  #
+  # To use SVG pictures
+  # https://pub.dev/packages/flutter_svg
+  flutter_svg: ^1.1.5
+
+  shared_preferences: ^2.1.0
+
+  intl: ^0.17.0
+  # Generate native splash screen
+  # Customize Flutter's default white native splash screen with background color and splash image. Supports dark mode, full screen, and more.
+  # https://pub.dev/packages/flutter_native_splash
+  # flutter_native_splash: ^2.2.17
+
+  # Dependency injection
+  # https://pub.dev/packages/get_it
+  get_it: ^7.2.0
+  # Network
+  #
+  # Http Client
+  # https://pub.dev/packages/dio
+  dio: ^4.0.6
+
+  # Dio client generator
+  # https://pub.dev/packages/retrofit
+  retrofit: ">=3.0.0 <4.0.0"
+
+  ## State Management
+  #
+  # Bloc State Management
+  # https://pub.dev/packages/flutter_bloc
+  flutter_bloc: ^8.0.1
+
+  url_launcher: ^6.1.11
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^2.0.1
+
+  dart_code_metrics: ^4.19.2
+
+  # Standalone generator
+  # https://pub.dev/packages/build_runner
+  build_runner: ^2.2.1
+
+  # Http
+  #
+  # retrofit generator is an dio client generator using source_gen and inspired by Chopper and Retrofit.
+  # https://pub.dev/packages/retrofit_generator
+  retrofit_generator: ">=4.0.0 <5.0.0"
+
+  # Testing
+  #
+  # A mock framework inspired by Mockito
+  # https://pub.dev/packages/mockito
+  mockito: ^5.3.2
+  #
+  # A testing library which makes it easy to test blocs.
+  # https://pub.dev/packages/bloc_test
+  bloc_test: ^9.1.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+flutter:
+  generate: true
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/icons/
+
+  fonts:
+    - family: Merriweather
+      fonts:
+        - asset: assets/fonts/Merriweather-Black.ttf
+          weight: 900
+        - asset: assets/fonts/Merriweather-Regular.ttf
+          weight: 400
+    - family: Nunito Sans
+      fonts:
+        - asset: assets/fonts/NunitoSans_10pt-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/NunitoSans_10pt-Regular.ttf
+          weight: 400
+
+flutter_intl:
+  enabled: true
+  class_name: AppLocalizations
+
+# flutter_native_splash:
+#   background_image: lib/assets/splash/splash_screen.png
+#   android_12: lib/assets/splash/splash_screen.png
+#   android_gravity: fill
+

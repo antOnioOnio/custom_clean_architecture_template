@@ -1,0 +1,63 @@
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    prefer_single_quotes: true
+    always_use_package_imports: true
+
+analyzer:
+  plugins:
+    - dart_code_metrics
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+  errors:
+    invalid_annotation_target: ignore
+
+dart_code_metrics:
+  anti-patterns:
+    - long-method
+    - long-parameter-list
+  metrics-exclude:
+    - test/**
+  metrics:
+    cyclomatic-complexity: 20
+    maximum-nesting-level: 5
+    number-of-parameters: 4
+    source-lines-of-code: 100
+    metrics-exclude:
+      - test/**
+  rules:
+    - avoid-returning-widgets:
+        ignored-names:
+          - testFunction
+        ignored-annotations:
+          - allowedAnnotation
+    - newline-before-return
+    - no-boolean-literal-compare
+    - no-empty-block
+    - prefer-trailing-comma
+    - prefer-conditional-expressions
+    - no-equal-then-else
+    - avoid-shrink-wrap-in-lists
+    - avoid-non-null-assertion
+    - avoid-redundant-async
+    - avoid-throw-in-catch-block
+    - avoid-unnecessary-type-casts
+    - member-ordering:
+        widgets-order:
+          - constructor
+          - named-constructor
+          - const-fields
+          - static-methods
+          - final-fields
+          - init-state-method
+          - var-fields
+          - init-state-method
+          - private-methods
+          - overridden-public-methods
+          - build-method
+
+    - always-remove-listener
+    - avoid-wrapping-in-padding
+    - avoid-expanded-as-spacer

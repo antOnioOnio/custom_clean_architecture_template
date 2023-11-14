@@ -1,0 +1,13 @@
+﻿{
+   "@@locale":"en",
+   "home_screen_title" : "Home",
+   "english_language_text" : "English",
+   "spanish_language_text" : "Español",
+   "log_in_text" : "login",
+   "log_out_text" : "logout",
+   "user_text": "user",
+   "password_text": "password",
+   "welcome_text" : "Welcome to your app"
+
+}
+

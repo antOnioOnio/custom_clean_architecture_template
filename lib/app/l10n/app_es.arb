@@ -1,0 +1,12 @@
+{
+   "@@locale":"es",
+  "home_screen_title": "Inicio",
+  "english_language_text": "English",
+  "spanish_language_text": "Español",
+  "log_in_text": "Iniciar sesión",
+  "log_out_text": "Cerrar sesión",
+  "user_text": "Usuario",
+  "password_text": "Contraseña",
+  "welcome_text" : "Bienvenido a tu aplicación"
+}
+
